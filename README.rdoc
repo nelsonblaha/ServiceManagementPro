@@ -13,7 +13,9 @@ and I don't want surprises going from one environment to another.
 Make sure you install the pg gem and all its dependencies before spinning this guy up in the typical Rails fashion, i.e.,
 
 bundle install
+
 rake db:create
+
 rake db:schema:load
 
 Let me know about bugs! I know this code isn't the prettiest but I'm trying to keep it fairly DRY.
