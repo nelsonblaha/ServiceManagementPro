@@ -1,28 +1,30 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple application, made in a hurry.
 
-Things you may want to cover:
+It's a ticket tracking system, so that users can submit work tickets, technicians can document progress and
+mark their assignments as completed, and management can track statistics on the whole shebang.
 
-* Ruby version
+There's a lot still in progress here.
 
-* System dependencies
+I'm using PostGres in development and production. It's a bit industrial, I think, but I really want to do this quickly
+and I don't want surprises going from one environment to another.
 
-* Configuration
+Make sure you install the pg gem and all its dependencies before spinning this guy up in the typical Rails fashion, i.e.,
 
-* Database creation
+bundle install
+rake db:create
+rake db:schema:load
 
-* Database initialization
+Let me know about bugs! I know this code isn't the prettiest but I'm trying to keep it fairly DRY.
 
-* How to run the test suite
+I don't have tests in place yet (gasp, monocle pop) but that'll probably be cukes.
 
-* Services (job queues, cache servers, search engines, etc.)
+Going to use this for outgoing email: https://support.google.com/a/answer/2956491 (SMTP is easy.)
+I can hook up the authentication into LDAP. I've used Rails's built-in authentication with bcrypt for this implementation.
 
-* Deployment instructions
+Going to use POSTGRES' native search once I have all my tables defined: http://robots.thoughtbot.com/implementing-multi-table-full-text-search-with-postgres
 
-* ...
+Ruby's got some built in stuff that will make a listener easy: http://www.ruby-doc.org/stdlib-2.1.2/libdoc/net/pop/rdoc/Net/POP3.html
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I really oughta be putting this all in the 'Issues' thing huh
