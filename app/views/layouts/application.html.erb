@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Service Management Pro</title>
+
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/navigation'%>
+<%= render 'layouts/messages' %>
+<%= render 'layouts/login' %>
+<%= yield if current_user %>
+<%= render 'users/sign_up_form' unless current_user %>
+</body>
+</html>

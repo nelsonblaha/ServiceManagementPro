@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer Username:</strong>
+  <%= @ticket.customernetid %>
+</p>
+
+<p>
+  <strong>Customer ID Number:</strong>
+  <%= @ticket.customermavid %>
+</p>
+
+<p>
+  <strong>Customer Name:</strong>
+  <%= @ticket.customername %>
+</p>
+
+<p>
+  <strong>Customer Phone Number:</strong>
+  <%= @ticket.customerphone %>
+</p>
+
+<p>
+  <strong>Customeremail:</strong>
+  <%= @ticket.customeremail %>
+</p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @ticket.problem %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @ticket.category %>
+</p>
+
+<p>
+  <strong>Resolution:</strong>
+  <%= @ticket.resolution %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @ticket.notes %>
+</p>
+<% unless @ticket.tasks.empty? %>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3> Tasks </h3>
+</div>
+<div class="panel-body">
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Status</th>
+      <th>Notification</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.user.netid %></td>
+        <td><%= task.status %></td>
+        <td><%= task.notification %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<% end %>
+<%= render partial: 'tasks/form' %>
+
+<%=link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

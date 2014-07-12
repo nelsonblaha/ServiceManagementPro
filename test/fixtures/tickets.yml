@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customernetid: MyString
+  customermavid: MyString
+  customername: MyString
+  customerphone: MyString
+  customeremail: MyString
+  problem: false
+  category: MyString
+  resolution: MyText
+  notes: MyText
+
+two:
+  customernetid: MyString
+  customermavid: MyString
+  customername: MyString
+  customerphone: MyString
+  customeremail: MyString
+  problem: false
+  category: MyString
+  resolution: MyText
+  notes: MyText

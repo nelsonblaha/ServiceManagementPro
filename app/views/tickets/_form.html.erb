@@ -1,0 +1,50 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="col-md-5 col-md-offset-1"> 
+  <div class="field">
+    <label> Customer Username</label><br>
+    <%= f.text_field :customernetid %>
+  </div>
+  <div class="field">
+    <label> Customer ID Number</label><br>
+    <%= f.text_field :customermavid %>
+  </div>
+  <div class="field">
+    <label> Customer Name</label><br>
+    <%= f.text_field :customername %>
+  </div>
+  <div class="field">
+    <label> Customer Phone</label><br>
+    <%= f.text_field :customerphone %>
+  </div>
+  <div class="field">
+    <label> Customer Email</label><br>
+    <%= f.text_field :customeremail %>
+  </div>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+</div>
+<div class="col-md-3"> 
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :resolution %><br>
+    <%= f.text_area :resolution, rows: 3 %>
+  </div>
+</div>
+<% end %>
