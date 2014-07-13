@@ -26,7 +26,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.status = "assigned"
-    respond_to do |format|
+
+    #Mail the user with the notification
+    TaskMailer.notify(@task).deliver
+
+    respond_to do |format| 
       if @task.save
         format.html { redirect_to edit_ticket_path(@task.ticket), notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }

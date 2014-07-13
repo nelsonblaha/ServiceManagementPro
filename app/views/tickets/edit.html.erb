@@ -1,7 +1,11 @@
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#ticket" role="tab" data-toggle="tab">Customer Info</a><li>
-  <li><a href="#tasks" role="tab" data-toggle="tab">Tasks</a><li>
-  <li><a href="#notes" role="tab" data-toggle="tab">Notes</a><li>
+   <% unless @ticket.tasks.empty? %>
+     <li><a href="#tasks" role="tab" data-toggle="tab">Tasks</a><li>
+   <% end %>
+   <% unless @ticket.notes.empty? %>
+     <li><a href="#notes" role="tab" data-toggle="tab">Notes</a><li>
+   <% end %>
 </ul>
 
 <div class="tab-content" style="padding:20px;">
