@@ -1,0 +1,48 @@
+<!-- button trigger modal -->
+<div class="col-md-9 col-md-offset-3" style="margin-top: 10px">
+<a class="btn btn-success" data-toggle="modal" data-target="#noteModal" href="#" style="color:white">
+Make a Note
+</a>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Note</h4>
+      </div>
+      <div class="modal-body">
+
+<%= form_for(@note) do |note| %>
+  <% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% @note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= note.label :categorization %><br>
+    <%= note.text_field :categorization %>
+  </div>
+  <div class="field">
+    <%= note.label :content %><br>
+    <%= note.text_area :content, rows: 3, cols: 74 %>
+  </div>
+    <%= note.hidden_field :ticket_id, value: @ticket.id %>
+    <%= note.hidden_field :user_id, value: current_user.id %>
+      <div class="modal-footer" style="text-align:left; padding-left:0px">
+        <%= note.submit "Submit", class: "btn btn-primary" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -79,10 +79,13 @@ class TicketsController < ApplicationController
       @task = Task.find(params[:task_id]) if params[:task_id]
       @task ||= Task.new
       @tasks = @ticket.tasks
+      @note = Note.find(params[:note_id]) if params[:note_id]
+      @note ||= Note.new
+      @notes = @ticket.notes 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit( :customernetid, :customermavid, :customername, :customerphone, :customeremail, :problem, :category, :resolution, :notes, :user, :page, :description, :task_id)
+      params.require(:ticket).permit( :customernetid, :customermavid, :customername, :customerphone, :customeremail, :problem, :category, :resolution, :notes, :user, :page, :description, :task_id, :note_id)
     end
 end
