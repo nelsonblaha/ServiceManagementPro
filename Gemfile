@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 gem 'net-ldap'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+ruby '2.1.2'
