@@ -41,4 +41,5 @@ gem 'spring',        group: :development
 gem 'net-ldap'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'rails_12factor', group: :production
 ruby '2.1.2'
