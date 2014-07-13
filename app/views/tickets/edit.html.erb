@@ -1,15 +1,20 @@
-<div class="col-md-6 col-md-offset-3" style="padding-top:20px" >
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h1>Editing ticket <%= @ticket.id %> </h1>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#ticket" role="tab" data-toggle="tab">Customer Info</a><li>
+  <li><a href="#tasks" role="tab" data-toggle="tab">Tasks</a><li>
+  <li><a href="#notes" role="tab" data-toggle="tab">Notes</a><li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ticket">
+    <%= render 'form' %>
+  </div>
+  <div class="tab-pane" id="tasks">
+    <%= render partial: 'tasks' %>
+  </div>
+  <div class="tab-pane" id="notes">
+    <%= render partial: 'notes' %>
+  </div>
 </div>
-<div class="panel-body">
-<%= render 'form' %>
-</div>
-</div>
-</div>
-<%= render partial: 'tasks' %>
-<%= render partial: 'notes' %>
 <%= render partial: 'tasks/form' %>
 <%= render partial: 'notes/form' %>
 <%= render partial: 'links' %>

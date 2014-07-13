@@ -1,3 +1,9 @@
+<div class="col-md-6 col-md-offset-3" style="padding-top:20px" >
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h1>Ticket <%= @ticket.id %> </h1>
+</div>
+<div class="panel-body">
 <%= form_for(@ticket) do |f| %>
   <% if @ticket.errors.any? %>
     <div id="error_explanation">
@@ -48,3 +54,6 @@
   </div>
 </div>
 <% end %>
+</div>
+</div>
+</div>
