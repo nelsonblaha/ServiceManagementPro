@@ -5,6 +5,10 @@ This is a simple application, made in a hurry.
 It's a ticket tracking system, so that users can submit work tickets, technicians can document progress and
 mark their assignments as completed, and management can track statistics on the whole shebang.
 
+
+You can check out a demo here: http://guarded-earth-8637.herokuapp.com/
+
+
 There's a lot still in progress here.
 
 I'm using PostGres in development and production. It's a bit industrial, I think, but I really want to do this quickly
